@@ -7,9 +7,9 @@
   font-style: normal;
   src: local("Gilroy Regular"),
        local("Gilroy-Regular"),
-       url("/fonts/Gilroy-Regular.woff2") format("woff2"), 
-       url("/fonts/Gilroy-Regular.woff") format("woff"), 
-       url("/fonts/Gilroy-Regular.eot")  format("eot");
+       url("../fonts/Gilroy-Regular.woff2") format("woff2"), 
+       url("./fonts/Gilroy-Regular.woff") format("woff"), 
+       url("./fonts/Gilroy-Regular.eot")  format("eot");
   font-display: swap;
 }
 
@@ -19,9 +19,9 @@
   font-style: normal;
   src: local("Gilroy Medium"),
        local("Gilroy-Medium"),
-       url("/fonts/Gilroy-Medium.woff2") format("woff2"), 
-       url("/fonts/Gilroy-Medium.woff") format("woff"), 
-       url("/fonts/Gilroy-Medium.eot")  format("eot");
+       url("./fonts/Gilroy-Medium.woff2") format("woff2"), 
+       url("./fonts/Gilroy-Medium.woff") format("woff"), 
+       url("./fonts/Gilroy-Medium.eot")  format("eot");
   font-display: swap;
 }
 
@@ -31,9 +31,9 @@
   font-style: normal;
   src: local("Gilroy Semibold"),
        local("Gilroy-Semibold"),
-       url("/fonts/Gilroy-Semibold.woff2") format("woff2"), 
-       url("/fonts/Gilroy-Semibold.woff") format("woff"), 
-       url("/fonts/Gilroy-Semibold.eot")  format("eot");
+       url("./fonts/Gilroy-Semibold.woff2") format("woff2"), 
+       url("./fonts/Gilroy-Semibold.woff") format("woff"), 
+       url("./fonts/Gilroy-Semibold.eot")  format("eot");
   font-display: swap;
 }
 
@@ -44,9 +44,9 @@
   font-style: normal;
   src: local("Gilroy Bold"),
        local("Gilroy-Bold"),
-       url("/fonts/Gilroy-Bold.woff2") format("woff2"), 
-       url("/fonts/Gilroy-Bold.woff") format("woff"), 
-       url("/fonts/Gilroy-Bold.eot")  format("eot");
+       url("./fonts/Gilroy-Bold.woff2") format("woff2"), 
+       url("./fonts/Gilroy-Bold.woff") format("woff"), 
+       url("./fonts/Gilroy-Bold.eot")  format("eot");
   font-display: swap;
 }
 
@@ -61,19 +61,20 @@
   --black-5: #505050;
   --black-6: #1D1D1D;
 
+  --gold: #D3A265;
+
   --grey-1: #F3F3F3;
   --grey-2: #C4C4C4;
   --white: #FFF;
 
   --red: #D24F0B;
 
+
   /* fonts */
   --titleFont:'Bree Serif', serif;
   --textFont: 'Gilroy', serif;
 
-  /* rest of the vars 
-  width, bg, ls
-  */
+  /* rest of the vars*/
   --transition: all 0.3s ease-in-out;
   --linkTransition: all 0.2s linear;
   --z-fixed: 100;
@@ -131,8 +132,6 @@ img {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  /* width: 100%;
-  overflow: hidden; */
 }
 
 .container{
@@ -149,7 +148,8 @@ img {
   font-weight: 500;
   color: var(--black-1);
   background: transparent;
-  border: 2.5px solid var(--black-5);
+  border: 2.5px solid var(--gold);
+  border-radius: 8px;
   line-height: 1.2;
   transition: var(--transition);
   cursor: pointer;
@@ -174,7 +174,7 @@ section {
 }
 
 .section__title span {
-  color: var(--black-5);
+  color: var(--gold);
 }
 
 .center {
@@ -189,7 +189,7 @@ section {
 /* ========================= HEADER ========================= */ 
 .header {
   width: 100%;
-   position: fixed; 
+  position: fixed; 
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
@@ -232,7 +232,7 @@ section {
 .header__contact-link:hover,
 .lang:hover
  {
-  color: var(--red);
+  color: var(--gold);
 }
 
 .header__contact-item {
@@ -367,13 +367,13 @@ select::-ms-expand {
 
 .services__title {
   margin-bottom: 19px;
-  font-weight: 400;
+  font-weight: 600;
   text-transform: uppercase;
   transition: var(--linkTransition);
 }
 
 .services__title:hover {
-  border-bottom: 2px solid var(--red);
+  border-bottom: 2px solid var(--gold);
   cursor: pointer;
 }
 
@@ -386,7 +386,7 @@ select::-ms-expand {
 
 .portfolio__type:hover,
 .portfolio__link:hover  {
-  color: var(--red);
+  color: var(--gold);
 }
 
 .portfolio__types {
@@ -411,10 +411,12 @@ select::-ms-expand {
 .pricing__item {
   width: 270px;
   padding: 32px 0;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: var(--black-1);
+  border: 2px solid var(--gold);
   height: auto;
   transition: var(--transition);
 }
@@ -438,7 +440,7 @@ select::-ms-expand {
   display: inline-block;
   width: 194px;
   height: 0px;
-  border: 1px solid #D2D2D2;
+  border: 1px solid #DCD1BB;
 }
 
 .price {
@@ -462,8 +464,8 @@ select::-ms-expand {
   padding: 12px 34px;
   font-weight: 600;
   line-height: 1.8;
-  background-color: #313131;
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--black-2);
   transform: none;
 }
 
@@ -473,12 +475,12 @@ select::-ms-expand {
   border: none;
 }
 
-.pricing__item--black {
-  background-color: var(--black-6);
+.pricing__item--gold {
+  background-color: var(--gold);
   color: var(--white);
 }
 
-.pricing__item--black .time {
+.pricing__item--gold .time {
   color: var(--white);
 }
 
@@ -500,7 +502,7 @@ select::-ms-expand {
   content: '';
   width: 100%;
   height: 1px;
-  background-color: black;
+  background-color: #DCD1BB;
   position: absolute;
   top: 141px;
   left: 0;
@@ -561,7 +563,7 @@ select::-ms-expand {
 }
 
 .dot--active {
-  background-color: var(--black-5);
+  background-color: var(--gold);
 }
 
 /* ========================= Questions =========================  */ 
@@ -617,7 +619,7 @@ select::-ms-expand {
 }
 
 .nav__link:hover {
-  color: var(--red);
+  color: var(--gold);
 }
 
 .nav__item:last-child {
