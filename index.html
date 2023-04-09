@@ -10,69 +10,68 @@
 </head>
 <body>
   <div class="wrapper">
-
     <!-- =================== Header =================== -->
     <header class="header">
-      <div class="container">
-        <div class="header__inner">
-          <div class="header__logo logo">
-            <img src="./assets/logo.svg" alt="logo">
-          </div>
-          <nav class="header__nav">
-            <ul class="header__nav-list">
-              <li class="header__nav-item">
-                <a href="#" class="header__nav-link">Services</a>
+      <div class="header__container">
+        <a href="#" class="header__logo">
+          <img src="./assets/logo.svg" alt="logo">
+        </a>
+        <div class="header__menu menu">
+          <nav class="menu__body">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#services" class="menu__link">Services</a>
               </li>
-
-              <li class="header__nav-item">
-                <a href="#" class="header__nav-link">Portfolio</a>
+              <li class="menu__item">
+                <a href="#portfolio" class="menu__link">Portfolio</a>
               </li>
-
-              <li class="header__nav-item">
-                <a href="#" class="header__nav-link">Pricing</a>
+              <li class="menu__item">
+                <a href="#pricing" class="menu__link">Pricing</a>
               </li>
             </ul>
           </nav>
-          <div class="header__contact">
-            <ul class="header__contact-list">
-              <li class="header__contact-item">
-                <a href="tel:+3035550105" class="header__contact-link">(303) 555-0105</a>
-              </li>
-              <li class="header__contact-item">
-                <a href="mailto: example@website.com" class="header__contact-link">example@website.com</a>
-              </li>
-              <li class="header__contact-item">
-                <select class="lang">
-                  <option value="en">EN</option>
-                  <option value="ru">RU</option>
-                </select>
-              </li>
-            </ul>
-          </div>
+        </div>
+        <div class="header__contact contact">
+          <ul class="contact__list">
+            <li>
+              <a href="tel:+3035550105" class="contact__link">(303) 555-0105</a>
+            </li>
+            <li>
+              <a href="mailto: example@website.com" class="contact__link">example@website.com</a>
+            </li>
+            <li>
+              <select class="lang">
+                <option value="en">EN</option>
+                <option value="ru">RU</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+        <div class="burger">
+          <span></span>
         </div>
       </div>
     </header>
-
-    <!-- =================== Hero =================== -->
-    <div class="hero">
-      <div class="hero__content">
-        <div class="container hero--container">
-          <div class="hero__body">
-            <h1 class="hero__title">We create your space better</h1>
-            <p class="hero__text">Our team creates comfortable spaces for our clients. We’ve been designing your everyday life and work through great ideas since 1999.</p>
-            <button class="btn">Get started</button>
+    <!-- =================== Main =================== -->
+    <main class="main">
+      <!-- =================== Hero =================== -->
+      <section class="hero">
+        <div class="hero__content">
+          <div class="hero__container">
+            <div class="hero__body">
+              <h1 class="hero__title">We create your space better</h1>
+              <p class="hero__text">Our team creates comfortable spaces for our clients. We’ve been designing your everyday life and work through great ideas since 1999.</p>
+              <button class="btn btn--hero">Get started</button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="hero__img">
-        <img src="./assets/hero.svg" alt="">
-      </div>
-    </div>
-
-    <main class="main">
+        <div class="hero__img">
+          <img src="./assets/hero.svg" alt="">
+        </div>
+      </section>
       <!-- =================== About =================== -->
-      <section class="about section--grey">
-        <div class="container about--container">
+      <section class="about section--grey" id="about">
+        <div class="about__container">
           <h2 class="section__title">About <br> <span>Studio</span></h2>
           <div class="about__text">
             <p>Interiart is an award-winning architecture and interior design practice based in NYC. We work internationally on projects of residential & commercial interior design that require a creative approach. Our talented and experienced designers leverage their knowledge and expertise to create unique and comfortable interiors for you.</p>
@@ -83,8 +82,8 @@
       </section>
       
       <!-- =================== Services =================== -->
-      <section class="services">
-        <div class="container">
+      <section class="services" id="services">
+        <div class="services__container">
           <h2 class="section__title">Our <span>Services</span></h2>
           <ul class="services__list">
             <li class="services__item">
@@ -131,8 +130,8 @@
       </section>
 
       <!-- =================== Portfolio =================== -->
-      <section class="portfolio section--grey">
-        <div class="container">
+      <section class="portfolio section--grey" id="portfolio">
+        <div class="portfolio__container">
           <h2 class="section__title center">Our <span>Portfolio</span></h2>
           <div class="portfolio__list">
             <ul class="portfolio__types">
@@ -175,8 +174,8 @@
       </section>
 
       <!-- =================== Pricing =================== -->
-      <section class="pricing">
-        <div class="container">
+      <section class="pricing" id="pricing">
+        <div class="pricing__container">
           <h2 class="section__title center">Our <span>Pricing</span></h2>
           <div class="pricing__list">
             <article class="pricing__item">
@@ -224,8 +223,8 @@
       </section>
 
       <!-- =================== Reviews =================== -->
-      <section class="reviews section--grey">
-        <div class="container">
+      <section class="reviews section--grey" id="reviews">
+        <div class="reviews__container">
           <h2 class="section__title center">What <span>People Say</span></h2>
           <div class="reviews__cards">
             <article class="reviews__card card">
@@ -275,7 +274,7 @@
 
       <!-- =================== Questions =================== -->
       <section class="questions">
-        <div class="container">
+        <div class="questions__container">
           <div class="questions__field">
             <h1 class="section__title title">Do you have <br>
               <span>any question?</span></h1>
@@ -286,7 +285,7 @@
     </main>
     <!-- =================== Footer =================== -->
     <footer class="footer section--grey">
-      <div class="container">
+      <div class="footer__container">
         <div class="footer__inner">
           <div class="footer__inner-info info">
             <div class="logo">
@@ -294,18 +293,18 @@
             </div>
             <p class="info__text">We are one of the leading interior design and remodeling studios available for all of your residential and commercial interior design needs.</p>
             <p class="info__data">
-              &copy 2023 id Studio. All Rights Reserved.
+              &copy <span id="date"></span> id Studio. All Rights Reserved.
             </p>
           </div>
           <div class="footer__inner-blocks">
             <h6 class="footer__title">Navigation</h6>
             <nav class="footer__inner-nav nav">
               <ul class="nav__list">
-                <li class="nav__item"><a class="nav__link" href="#">About</a></li>
-                <li class="nav__item"><a class="nav__link" href="#">Services</a></li>
-                <li class="nav__item"><a class="nav__link" href="#">Portfolio</a></li>
-                <li class="nav__item"><a class="nav__link" href="#">Pricing</a></li>
-                <li class="nav__item"><a class="nav__link" href="#">Testemonials</a></li>
+                <li class="nav__item"><a class="nav__link" href="#about">About</a></li>
+                <li class="nav__item"><a class="nav__link" href="#services">Services</a></li>
+                <li class="nav__item"><a class="nav__link" href="#portfolio">Portfolio</a></li>
+                <li class="nav__item"><a class="nav__link" href="#pricing">Pricing</a></li>
+                <li class="nav__item"><a class="nav__link" href="#reviews">Testemonials</a></li>
               </ul>
             </nav>
             <ul class="social__links">
@@ -333,5 +332,6 @@
       </div>
     </footer>
   </div>
+  <script src="./app.js"></script>
 </body>
 </html>
