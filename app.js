@@ -1,8 +1,6 @@
 //  ============== set date =============
-
 const date = document.getElementById('date');
 date.innerHTML = new Date().getFullYear();
-
 
 //  ============== open nav =============
 document.querySelector('.burger').addEventListener('click', function() {
@@ -23,4 +21,10 @@ window.addEventListener('scroll', function() {
   }
 });
 
-console.log('hey')
+//  ============== active and remove menu =============
+const navLink = document.querySelectorAll('.menu__link');
+navLink.forEach(link => link.addEventListener('click', () => {
+  document.querySelector('.menu__body').classList.remove('open');
+  document.querySelector('.burger').classList.remove('active');
+}))
+
