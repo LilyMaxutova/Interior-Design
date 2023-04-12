@@ -50,6 +50,19 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "BN Chester Regular";
+  font-weight: 400;
+  font-style: normal;
+  src: local("BN Chester Regular"),
+       local("BN Chester-Regular"),
+       url("./fonts/BN\ Chester\ Regular.woff2") format("woff2"), 
+       url("./fonts/BN\ Chester\ Regular.woff") format("woff"), 
+       url("./fonts/BN\ Chester\ Regular.eot")  format("eot");
+  font-display: swap;
+}
+
+
 /* ================= VARIABLES CSS ================= */
 :root {
 
@@ -71,7 +84,7 @@
 
 
   /* fonts */
-  --titleFont:'Bree Serif', serif;
+  --titleFont:'BN Chester Regular', serif;
   --textFont: 'Gilroy', serif;
 
   /* rest of the vars*/
@@ -199,13 +212,17 @@ section {
 @media screen and (max-width: 991.98px) {
   [class*="__container"] {
     max-width: 850px;
-    font-size: 14px;
   }
 }
 
 @media screen and (max-width: 767.98px) {
   [class*="__container"] {
+    padding: 0 30px;
     max-width: none;
+  }
+
+  .section__title {
+    font-size: 32px;
   }
 }
 
@@ -437,7 +454,6 @@ select::-ms-expand {
   width: 100%;
 }
 
-
 @media screen and (min-width: 767px) {
   .hero {
     padding: 0;
@@ -487,12 +503,14 @@ select::-ms-expand {
 
 /* ========================= ABOUT =========================  */ 
 .about {
-  padding: 74px 0 71px 0;
+  padding: 71px 0;
 }
+
 
 .about__container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .about__text {
@@ -500,6 +518,44 @@ select::-ms-expand {
   max-width: 570px;
 }
 
+
+@media screen and (max-width: 767.98px) {
+  .about {
+    padding: 58px 0 37px 0;
+  }
+
+  .about__container {
+    flex-direction: column;
+  }
+
+  .about__container h2 {
+    margin: 0 auto 28px 0;
+  }
+
+  summary[hidden] {
+    display: block;
+  }
+
+  summary {
+    position: relative;
+    display: block;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 78px;
+    border: 1px solid #D3A265;
+  }
+}
 /* ========================= Services =========================  */ 
 .services__list {
   margin: 113px 0 80px;
@@ -534,9 +590,15 @@ select::-ms-expand {
 
 /* ========================= Portfolio =========================  */ 
 .portfolio__list {
-  margin: 53px 0 71px;
+  margin: 85px 0 29px;
   display: flex;
   justify-content: space-between;
+  color: var(--black-2);
+}
+
+.portfolio__link {
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 .portfolio__type:hover,

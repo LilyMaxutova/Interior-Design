@@ -28,3 +28,14 @@ navLink.forEach(link => link.addEventListener('click', () => {
   document.querySelector('.burger').classList.remove('active');
 }))
 
+// =============== cover text ===================
+
+let el = document.querySelector('details');
+window.addEventListener("resize", function() {
+  if (window.matchMedia("(max-width: 767.98px)").matches) {
+    el.removeAttribute('open')
+  } else {
+    el.setAttribute('open','open')
+  }
+});
+
