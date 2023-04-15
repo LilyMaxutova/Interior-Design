@@ -32,7 +32,7 @@
             </ul>
           </nav>
         </div>
-        <div class="header__contact contact">
+        <div class="header__contact contact--header">
           <ul class="contact__list">
             <li>
               <a href="tel:+3035550105" class="contact__link">(303) 555-0105</a>
@@ -74,12 +74,9 @@
           <div class="about__text">
             <p>Interiart is an award-winning architecture and interior design practice based in NYC. We work internationally on projects of residential & commercial interior design that require a creative approach. Our talented and experienced designers leverage their knowledge and expertise to create unique and comfortable interiors for you.</p>
             <br>
-            <details open>
-              <summary hidden>READ MORE</summary>
-              <p><span>Our team knows that interior design can be stressful for the client and we do our best to make it as easy as possible. We listen to your needs, ideas, and inputs. And most importantly, we make it exciting and enjoyable for our clients.</span></p>
-            </details>
-          </div>
-          
+            <button class="read-btn">READ MORE</button>
+            <p class="cover-block">Our team knows that interior design can be stressful for the client and we do our best to make it as easy as possible. We listen to your needs, ideas, and inputs. And most importantly, we make it exciting and enjoyable for our clients.</p>
+          </div>   
         </div>
       </section>
       
@@ -156,19 +153,20 @@
             <li class="portfolio__img">
               <img src="./assets/gallery-3.png" alt="">
             </li>
-            <li class="portfolio__img">
+            <a class="hide-link center" href="#">VIEW MORE</a>
+            <li class="portfolio__img hide-img">
               <img src="./assets/gallery-4.png" alt="">
             </li>
-            <li class="portfolio__img">
+            <li class="portfolio__img hide-img">
               <img src="./assets/gallery-5.png" alt="">
             </li>
-            <li class="portfolio__img">
+            <li class="portfolio__img hide-img">
               <img src="./assets/gallery-6.png" alt="">
             </li>
-            <li class="portfolio__img">
+            <li class="portfolio__img hide-img">
               <img src="./assets/gallery-7.png" alt="">
             </li>
-            <li class="portfolio__img">
+            <li class="portfolio__img hide-img">
               <img src="./assets/gallery-8.png" alt="">
             </li>
           </ul>
@@ -182,7 +180,7 @@
           <div class="pricing__list">
             <article class="pricing__item">
               <h5 class="pricing__title">Basic</h5>
-              <div class="pricing__data center">
+              <div class="pricing__data">
                 <p class="price">$25</p>
                 <p class="time">per month</p>
               </div>
@@ -195,7 +193,7 @@
 
             <article class="pricing__item pricing__item--gold">
               <h5 class="pricing__title">Standart</h5>
-              <div class="pricing__data center">
+              <div class="pricing__data">
                 <p class="price">$50</p>
                 <p class="time">per month</p>
               </div>
@@ -209,7 +207,7 @@
 
             <article class="pricing__item">
               <h5 class="pricing__title">Premium</h5>
-              <div class="pricing__data center">
+              <div class="pricing__data">
                 <p class="price">$80</p>
                 <p class="time">per month</p>
               </div>
@@ -235,7 +233,7 @@
                   <img src="./assets/review-1.png" alt="">
                 </div>
                 <div class="card__info">
-                  <p class="card__info-name">Annette Black</p>
+                  <p class="card__info-name">Annette <br>Black</p>
                   <p class="card__info-position">Merchandising Associate</p>
                   <ul class="social__links">
                     <li class="social__link"><a href="#" target="_blank"><img src="./assets/social-icon-1.svg" alt=""></a></li>
@@ -243,11 +241,10 @@
                     <li class="social__link"><a href="#" target="_blank"><img src="./assets/social-icon-3.svg" alt=""></a></li>
                   </ul>
                 </div>
-                
               </div>
               <p class="card__text">Convallis non proin ac bibendum. At pharetra sed ultrices semper. Lectus et ornare ultrices urna in. Id non fringilla dignissim ac risus amet eget egestas vestibulum. Aliquet etiam eget nulla nulla odio vel.</p>
             </article>
-            <article class="reviews__card card">
+            <article class="reviews__card card none">
               <div class="card__header">
                 <div class="card__img">
                   <img src="./assets/review-2.png" alt="">
@@ -316,7 +313,7 @@
             </ul>
           </div>
           <div class="footer__inner-contact contact">
-            <h6 class="footer__title">CONTACTS</h6>
+            <h6 class="footer__title title--contact">CONTACTS</h6>
             <div class="contact__item">
               <p class="contact__title">ADRESS</p>
               <p class="contact__text">3517 W. Gray St. Utica, Pennsylvania 57867</p>
@@ -334,6 +331,6 @@
       </div>
     </footer>
   </div>
-  <script src="./app.js"></script>
+  <script src="./index.js"></script>
 </body>
 </html>

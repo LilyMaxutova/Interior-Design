@@ -1,68 +1,3 @@
-/* ================= FONTS ================= */
-@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
-
-@font-face {
-  font-family: Gilroy;
-  font-weight: 400;
-  font-style: normal;
-  src: local("Gilroy Regular"),
-       local("Gilroy-Regular"),
-       url("../fonts/Gilroy-Regular.woff2") format("woff2"), 
-       url("./fonts/Gilroy-Regular.woff") format("woff"), 
-       url("./fonts/Gilroy-Regular.eot")  format("eot");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Gilroy;
-  font-weight: 500;
-  font-style: normal;
-  src: local("Gilroy Medium"),
-       local("Gilroy-Medium"),
-       url("./fonts/Gilroy-Medium.woff2") format("woff2"), 
-       url("./fonts/Gilroy-Medium.woff") format("woff"), 
-       url("./fonts/Gilroy-Medium.eot")  format("eot");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Gilroy;
-  font-weight: 600;
-  font-style: normal;
-  src: local("Gilroy Semibold"),
-       local("Gilroy-Semibold"),
-       url("./fonts/Gilroy-Semibold.woff2") format("woff2"), 
-       url("./fonts/Gilroy-Semibold.woff") format("woff"), 
-       url("./fonts/Gilroy-Semibold.eot")  format("eot");
-  font-display: swap;
-}
-
-
-@font-face {
-  font-family: Gilroy;
-  font-weight: 700;
-  font-style: normal;
-  src: local("Gilroy Bold"),
-       local("Gilroy-Bold"),
-       url("./fonts/Gilroy-Bold.woff2") format("woff2"), 
-       url("./fonts/Gilroy-Bold.woff") format("woff"), 
-       url("./fonts/Gilroy-Bold.eot")  format("eot");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "BN Chester Regular";
-  font-weight: 400;
-  font-style: normal;
-  src: local("BN Chester Regular"),
-       local("BN Chester-Regular"),
-       url("./fonts/BN\ Chester\ Regular.woff2") format("woff2"), 
-       url("./fonts/BN\ Chester\ Regular.woff") format("woff"), 
-       url("./fonts/BN\ Chester\ Regular.eot")  format("eot");
-  font-display: swap;
-}
-
-
 /* ================= VARIABLES CSS ================= */
 :root {
 
@@ -410,7 +345,7 @@ select::-ms-expand {
     text-transform: uppercase;
   }
 
-  .contact {
+  .contact--header {
     display: none;
   }
 }
@@ -454,7 +389,7 @@ select::-ms-expand {
   width: 100%;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 767.98px) {
   .hero {
     padding: 0;
     display: flex;
@@ -506,7 +441,6 @@ select::-ms-expand {
   padding: 71px 0;
 }
 
-
 .about__container {
   display: flex;
   justify-content: space-between;
@@ -514,8 +448,17 @@ select::-ms-expand {
 }
 
 .about__text {
+  margin-bottom: 28px;
   line-height: 1.7;
   max-width: 570px;
+}
+
+.read-btn {
+  display: none;
+  font-size: 14px;
+  text-transform: uppercase; 
+  font-weight: 600;
+  border: none;
 }
 
 
@@ -532,29 +475,34 @@ select::-ms-expand {
     margin: 0 auto 28px 0;
   }
 
-  summary[hidden] {
-    display: block;
-  }
-
-  summary {
+  .read-btn {
+    margin-bottom: 15px;
+    display: inline-block;
+    max-width: 100%;
     position: relative;
-    display: block;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-  
-  summary::-webkit-details-marker {
-    display: none;
   }
 
-  summary::after {
+  .read-btn::after {
     content: '';
     position: absolute;
-    bottom: 0px;
     left: 0;
+    bottom: -5px;
     width: 78px;
     border: 1px solid #D3A265;
   }
+
+  .cover-block {
+    display: none;
+  }
+
+  .block {
+    display: block;
+  }
+
+  .none {
+    display: none;
+  }
+
 }
 /* ========================= Services =========================  */ 
 .services__list {
@@ -667,6 +615,10 @@ select::-ms-expand {
   text-decoration: underline;
 }
 
+.hide-link {
+  display: none;
+}
+
 .portfolio__type:hover,
 .portfolio__link:hover  {
   color: var(--gold);
@@ -682,6 +634,71 @@ select::-ms-expand {
   display: grid;
   grid-template: repeat(2, 1fr) / repeat(4, 1fr);
   gap: 30px;
+}
+
+@media screen and (max-width: 767.98px) {
+  .portfolio {
+    padding: 47px 0;
+  }
+
+  .portfolio__list {
+    width: 100%;
+    margin: 64px 0 49px;
+    justify-content: center
+  }
+
+  .portfolio__types {
+    gap: 18px;
+  }
+
+  .portfolio__type {
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .portfolio__link {
+    display: none;
+  }
+
+  .hide-link {
+    display: block;
+  }
+
+  .portfolio__gallery {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .portfolio__img img {
+    width: 100%;
+    height: 270px;
+  }
+
+  .active {
+    color: var(--gold);
+  }
+
+  .hide-img {
+    display: none;
+  }
+
+  .hide-link {
+    margin-top: 49px;
+    display: inline-block;
+    font-weight: 600;
+    max-width: 100%;
+    position: relative;
+  }
+
+  .hide-link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: -5px;
+    width: 78px;
+    border: 1px solid #D3A265;
+  }
 }
 
 /* ========================= Pricing=========================  */ 
@@ -715,12 +732,18 @@ select::-ms-expand {
   font-size: 24px;
 }
 .pricing__data {
+  width: 100%;
   font-family: var(--titleFont);
+  text-align: center;
+  position: relative;
 }
 
 .pricing__data::after{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
   content: '';
-  display: inline-block;
   width: 194px;
   height: 0px;
   border: 1px solid #DCD1BB;
@@ -767,6 +790,75 @@ select::-ms-expand {
   color: var(--white);
 }
 
+@media screen and (max-width: 767.98px) {
+  .pricing {
+    padding: 58px 0 35px;
+  }
+
+  .pricing__list {
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    gap: 29px;
+  }
+
+  .pricing__item {
+    padding: 0;
+    background: #FDFBF8;;
+  }
+
+  .pricing__item--gold {
+    color: var(--white);
+    background-color: var(--gold);
+  }
+
+  .pricing__item--gold 
+  .btn--pricing {
+    border-top: 1px solid #FDFBF8;;
+  }
+
+  .pricing__title {
+    font-size: 20px;
+    margin: 27px 33px;
+  }
+
+  .pricing__data {
+    display: flex;
+    gap: 13px;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .pricing__data::after {
+    bottom: -30px;
+  }
+
+  .price {
+    font-size: 28px;
+  }
+  
+  .time {
+    margin-bottom: 16px;
+    color: #BBBBBB;
+  }
+
+  .pricing__text {
+    width: 147px;
+    padding: 54px 0 35px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.8;
+  }
+
+  .btn--pricing {
+    width: 100%;
+    border-radius: 0px 0px 8px 8px;
+    background:var(--gold);
+    color: var(--white);
+    justify-content: center;
+  }
+}
+
 /* ========================= Reviews =========================  */ 
 .reviews__cards {
   margin: 87px 0 42px;
@@ -776,7 +868,7 @@ select::-ms-expand {
 }
 
 .card {
-  width: 570px;
+  max-width: 570px;
   background-color: white;
   position: relative;
 }
@@ -822,6 +914,10 @@ select::-ms-expand {
   color: var(--black-2);
 }
 
+.card__info-name br {
+  display: none;
+}
+
 .card__info-position {
   margin-bottom: 45px;
   color:  #B5B5B5;
@@ -849,12 +945,67 @@ select::-ms-expand {
   background-color: var(--gold);
 }
 
+@media screen and (max-width: 767.98px) {
+  .reviews {
+    padding: 57px 0 37px;
+  }
+
+  .card::after {
+    top: 107px;
+  }
+
+  .reviews__cards {
+    margin: 54px 0 46px;
+    grid-template-columns: 1fr;
+  }
+
+  .reviews__card {
+    max-width: 100%;
+    padding: 25px 25px 34px;
+  }
+
+  .card__header {
+    margin: 0;
+    gap: 15px;
+  }
+
+  .card__info-name {
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .card__info-name br {
+    display: initial;
+  }
+
+  .card__info-position {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .card__text {
+    margin: 0;
+  }
+
+  .card__img {
+    width: 129px;
+    height: 129px;
+    margin: 0;
+    align-self: flex-start;
+  }
+}
+
 /* ========================= Questions =========================  */ 
+.questions {
+  padding: 73px 0;
+}
+
 .questions__field {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 377px;
+  gap: 337px;
 }
 
 .btn--questions {
@@ -864,6 +1015,26 @@ select::-ms-expand {
 
 .title {
   margin-left: auto;
+}
+
+@media screen and (max-width: 767.98px) {
+  .questions {
+    padding: 46px 0;
+  }
+
+  .questions__field {
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .title {
+    margin-left: 0;
+  }
+
+  .btn--questions {
+    margin-right: 0;
+    width: 100%;
+  }
 }
 
 /* ========================= Footer =========================  */ 
@@ -929,7 +1100,93 @@ select::-ms-expand {
   font-size: 14px;
 }
 
-/* ========================= Media =========================  */ 
-@media screen (and min-width: 360px) {
+@media screen and (max-width: 767.98px) {
+  .footer__inner {
+    flex-direction: column;
+  }
+
+  .info__text {
+    display: none;
+  }
+
+  .footer__title {
+    display: none;
+  }
+
+  .nav {
+    display: flex;
+  }
   
+  .nav__list{
+    display: none;
+  }
+
+  .title--contact {
+    display: block;
+  }
+  }
+
+
+/* ================= FONTS ================= */
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+@font-face {
+  font-family: Gilroy;
+  font-weight: 400;
+  font-style: normal;
+  src: local("Gilroy Regular"),
+       local("Gilroy-Regular"),
+       url("../fonts/Gilroy-Regular.woff2") format("woff2"), 
+       url("./fonts/Gilroy-Regular.woff") format("woff"), 
+       url("./fonts/Gilroy-Regular.eot")  format("eot");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Gilroy;
+  font-weight: 500;
+  font-style: normal;
+  src: local("Gilroy Medium"),
+       local("Gilroy-Medium"),
+       url("./fonts/Gilroy-Medium.woff2") format("woff2"), 
+       url("./fonts/Gilroy-Medium.woff") format("woff"), 
+       url("./fonts/Gilroy-Medium.eot")  format("eot");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Gilroy;
+  font-weight: 600;
+  font-style: normal;
+  src: local("Gilroy Semibold"),
+       local("Gilroy-Semibold"),
+       url("./fonts/Gilroy-Semibold.woff2") format("woff2"), 
+       url("./fonts/Gilroy-Semibold.woff") format("woff"), 
+       url("./fonts/Gilroy-Semibold.eot")  format("eot");
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: Gilroy;
+  font-weight: 700;
+  font-style: normal;
+  src: local("Gilroy Bold"),
+       local("Gilroy-Bold"),
+       url("./fonts/Gilroy-Bold.woff2") format("woff2"), 
+       url("./fonts/Gilroy-Bold.woff") format("woff"), 
+       url("./fonts/Gilroy-Bold.eot")  format("eot");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BN Chester Regular";
+  font-weight: 400;
+  font-style: normal;
+  src: local("BN Chester Regular"),
+       local("BN Chester-Regular"),
+       url("./fonts/BN\ Chester\ Regular.woff2") format("woff2"), 
+       url("./fonts/BN\ Chester\ Regular.woff") format("woff"), 
+       url("./fonts/BN\ Chester\ Regular.eot")  format("eot");
+  font-display: swap;
 }
