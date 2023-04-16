@@ -647,6 +647,10 @@ select::-ms-expand {
     padding: 47px 0;
   }
 
+  .portfolio__container {
+    margin: 0 -30px;
+  }
+
   .portfolio__list {
     width: 100%;
     margin: 64px 0 49px;
