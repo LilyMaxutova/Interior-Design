@@ -17,28 +17,16 @@ function closeBurgerMenuItem() {
   menuElement.classList.remove('open');
 }
 
-function addFixedHeader() {
-  const scrollHeight = window.pageYOffset;
-  const navHeight = header.getBoundingClientRect().height;
-  if (scrollHeight > navHeight) {
-    header.classList.add('fixed-header');
-  } else {
-    header.classList.remove('fixed-header')
-  }
-}
-
-function getMobileHeader() {
-  if (isMobileDevice) {
-    window.addEventListener('scroll', addFixedHeader);
-   }
-}
-
 function openBlock() {
   blockElement.classList.toggle('block');
+}
+
+function fillYear() {
+  dateElement.innerHTML = new Date().getFullYear();
 }
 
 burgerMenuElement.addEventListener('click', openBurgerMenuItem);
 navLink.forEach(link => link.addEventListener('click', closeBurgerMenuItem));
 readBtn.addEventListener('click', openBlock);
-getMobileHeader();
-dateElement.innerHTML = new Date().getFullYear();
+window.addEventListener('load', fillYear);
+
